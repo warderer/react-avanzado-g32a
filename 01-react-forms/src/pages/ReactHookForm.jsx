@@ -1,12 +1,16 @@
+import { useForm } from 'react-hook-form'
 import logo from '../assets/react.svg'
 
 const ReactHookForm = () => {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm()
+  const onSubmit = data => console.log(data)
+
   return (
     <div className='login'>
       <div className='login-container'>
         <img src={logo} alt='logo' />
         <form
-          onSubmit={() => { }/* HANDLE SUBMIT */}
+          onSubmit={handleSubmit(onSubmit)}
           style={{ display: 'flex', flexDirection: 'column' }}
         >
 
@@ -16,6 +20,7 @@ const ReactHookForm = () => {
             name='firstName'
             placeholder='Tu Nombre'
             id='firstName'
+            {...register('firstName')}
           />
 
           <label htmlFor='lastName'>Apellido</label>
@@ -24,6 +29,7 @@ const ReactHookForm = () => {
             name='lastName'
             placeholder='Tu Apellido'
             id='lastName'
+            {...register('lastName')}
           />
 
           <label htmlFor='age'>Edad</label>
@@ -32,10 +38,11 @@ const ReactHookForm = () => {
             name='age'
             placeholder='Tu Edad'
             id='age'
+            {...register('age')}
           />
 
           <label htmlFor='gender'>Genero</label>
-          <select name='gender' id='gender'>
+          <select name='gender' id='gender' {...register('gender')}>
             <option value=''>Elige un genero</option>
             <option value='M'>Masculino</option>
             <option value='F'>Femenino</option>
@@ -48,13 +55,16 @@ const ReactHookForm = () => {
             name='email'
             placeholder='correo@mail.com'
             id='email'
+            {...register('email', { required: true })}
           />
+          {errors.email && <span>This field is required</span>}
 
           <label htmlFor='password'>Password</label>
           <input
             type='password'
             name='password'
             id='password'
+            {...register('password')}
           />
 
           <button type='submit'>
