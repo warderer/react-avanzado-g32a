@@ -16,8 +16,9 @@ const SongContext = createContext()
 // En este caso, el proveedor es un COMPONENTE que envuelve a los componentes que necesitan la información (el contexto). Se comparte mediante un prop llamado value.
 
 function SongProvider ({ children }) {
-  const [list, setList] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [list, setList] = useState([]) // lista de canciones
+  const [loading, setLoading] = useState(true) // ¿esta cargando?
+  const [selectedSong, setSelectedSong] = useState({}) // canción seleccionada
 
   // Simulamos una petición a una API
   useEffect(() => {
@@ -30,7 +31,9 @@ function SongProvider ({ children }) {
   // Esto es lo que se va a compartir de manera global
   const data = {
     list,
-    loading
+    loading,
+    selectedSong,
+    setSelectedSong
   }
 
   return (
