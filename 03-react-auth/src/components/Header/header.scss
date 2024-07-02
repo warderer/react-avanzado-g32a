@@ -1,0 +1,30 @@
+.header {
+    background-color: #d1d1d1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+
+    &__logo {
+        color: #3d3d3d;
+        text-decoration: none;
+        letter-spacing: 2px;
+    }
+
+    &__nav-list {
+        display: flex;
+        list-style: none;
+        column-gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    &__item-link {
+        color: #3d3d3d;
+        text-decoration: none;
+        letter-spacing: 2px;
+
+        &:hover {
+            border-bottom: solid 2px #3d3d3d;
+        }
+    }
+}
