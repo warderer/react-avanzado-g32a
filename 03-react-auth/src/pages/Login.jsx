@@ -15,9 +15,12 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const { status } = await loginUserService(data)
-      if (status === 200) {
+      const response = await loginUserService(data)
+      if (response.status === 200) {
         navigate('/dashboard')
+        // Guardamos el token en el localStorage del navegador
+        // Este dato permance aún si el navegador se cierra y vuelve a abrir.
+        window.localStorage.setItem('token', response.data.token)
       }
     } catch (error) {
       console.error(error)
