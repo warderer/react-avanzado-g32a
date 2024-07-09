@@ -1,16 +1,27 @@
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { loginUserService } from '@/services/userServices'
 import '@/styles/form.css'
 import logo from '@/assets/react.svg'
 
 const Login = () => {
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm()
 
-  const onSubmit = (data) => {
-    console.log(data)
+  const onSubmit = async (data) => {
+    try {
+      const { status } = await loginUserService(data)
+      if (status === 200) {
+        navigate('/dashboard')
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
