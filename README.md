@@ -32,7 +32,14 @@ Implementarás un sistema funcional de autenticación que permita a los usuarios
 ## 6. Introducción a Testing (con Cypress)
 Conocerás los fundamentos del testing en el desarrollo de software, comprendiendo su relevancia, los tipos de testing y estructura básica de una prueba. Instalarás y configurarás Cypress en tu proyecto React, realizando pruebas end-to-end para garantizar la calidad y el correcto funcionamiento de tu aplicación.
 
-### Recursos Complementarios
+# Recursos Complementarios
 - [Documentación de React](https://react.dev/)
 - [Lectura: Reemplazar Imagenes Rotas en React](https://www.cesarguerra.mx/como-reemplazar-imagenes-rotas-en-react-colocando-una-imagen-por-defecto-placeholder-fallback-images-on-error/)
 - [Configuración de ESLint con Standard JS](https://www.cesarguerra.mx/configuracion-rapida-de-eslint-con-standard-js-para-proyectos-de-javascript-y-de-react-con-vite-js/)
+
+# Autor
+Este repositorio y contenidos son realizados por César Guerra. 
+Puedes usarlos libremente, solo recuerda dar los créditos correspondientes =P.
+
+www.cesarguerra.mx
+
